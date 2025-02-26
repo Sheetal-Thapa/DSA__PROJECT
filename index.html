@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📖 Study Planner</h1>
+        
+        <label for="subject">Select Your Subject:</label>
+        <select id="subject" onchange="loadSyllabus()">
+            <option value="">-- Select --</option>
+        </select>
+
+        <label for="priority">Priority:</label>
+        <select id="priority" name="priority">
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
+        </select>
+
+        <label for="chapter">Select Chapter:</label>
+        <select id="chapter"></select>
+
+        <label for="time">Select Time to Study (mins):</label>
+        <input type="number" id="time" min="10" max="180">
+        
+        <button onclick="addTask()">Add Task</button>
+
+        <label for="search">Search Tasks:</label>
+        <input type="text" id="search" placeholder="Search by subject, chapter, or priority" onkeyup="searchTasks()">
+
+        <label for="sort">Sort Tasks:</label>
+        <select id="sort" onchange="sortTasks()">
+            <option value="priority">Sort by Priority</option>
+            <option value="time">Sort by Time</option>
+        </select>
+        
+        <div class="plan">
+            <h2>📌 Your Study Plan</h2>
+            <ul id="taskList"></ul>
+        </div>
+
+        <div id="analytics">
+            <p id="totalTime">Total Study Time: 0 minutes</p>
+            <p id="totalTasks">Total Tasks Completed: 0</p>
+        </div>
+        
+        <p class="quote">"Success is the sum of small efforts, repeated day in and day out."</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
